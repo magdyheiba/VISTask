@@ -4,14 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.mohabmohie</groupId>
 	<artifactId>using_SHAFT_ENGINE</artifactId>
-	<version>4.3.20200629</version>
+	<version>4.2.20200506</version>
 	<name>Using SHAFT_ENGINE</name>
-	<description>This is a sample project to showcase how to get started using SHAFT_Engine, and how to use some of its
-        rich features, while applying the best practices for Test Automation project design.
+	<description>This is a sample task for VIS using SHAFT_Engine while applying the best practices for Test Automation project design.
     </description>
 	<properties>
 		<!-- Make sure you point to the latest in-house version: https://bintray.com/mohabmohie/SHAFT/SHAFT_Engine -->
-		<shaft_engine.version>4.3.20200629</shaft_engine.version>
+		<shaft_engine.version>4.2.20200506</shaft_engine.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -59,7 +58,7 @@
 						</property>
 						<property>
 							<name>listener</name>
-                            <value>com.shaft.tools.listeners.AlterSuiteListener,com.shaft.tools.listeners.SuiteListener,com.shaft.tools.listeners.InvokedMethodListener,com.shaft.tools.listeners.CucumberFeatureListener</value>
+							<value>com.shaft.tools.listeners.AlterSuiteListener,com.shaft.tools.listeners.SuiteListener,com.shaft.tools.listeners.InvokedMethodListener,com.shaft.tools.listeners.CucumberFeatureListener</value>
 						</property>
 					</properties>
 				</configuration>
