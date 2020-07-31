@@ -85,6 +85,7 @@ This Assessment is currently working with [Testng](http://dl.bintray.com/testng-
 ### Important Notes:
 - this a GUI selenium Java project but using SHAFT_Engine 
 - By default reports will be automatically generated but you can check the result of the the test by running generate_allure_report.bat
+- This is the result at my side by running the project locally (https://drive.google.com/file/d/1txHP8P79JU4u4UjPvow5lsgZzqgUW-KY/view?usp=sharing) 
 
 License
 ----
