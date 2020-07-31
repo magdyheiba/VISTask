@@ -1,4 +1,4 @@
-package com.common.automationpractice;
+package com.automationpractice.commons;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,21 +17,23 @@ public class Authentication {
 	private By signin_button = By.id("SubmitLogin");
 
 	// constructor
-	public Authentication(ThreadLocal<WebDriver> driver) {
-		this.driver = driver.get();
+	public Authentication(WebDriver driver) {
+		this.driver = driver;
 	}
 
 	// login method
-	public void login(String Email, String Password) {
-		ElementActions.type(driver, email_login_input, Email);
-		ElementActions.typeSecure(driver, password_input, Password);
+	public Register login(String[] LoginData) {
+		ElementActions.type(driver, email_login_input, LoginData[0]);
+		ElementActions.typeSecure(driver, password_input, LoginData[1]);
 		ElementActions.click(driver, signin_button);
+		return new Register(driver);
 	}
 
 	// Navigate to Register screen
-	public void navigateToRegisterScreen(String Email) {
+	public Register navigateToRegisterScreen(String Email) {
 		ElementActions.type(driver, email_register_input, Email);
 		ElementActions.click(driver, submitEmail_register_button);
+		return new Register(driver);
 	}
 
 }
