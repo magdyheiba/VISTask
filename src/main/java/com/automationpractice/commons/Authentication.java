@@ -22,9 +22,9 @@ public class Authentication {
 	}
 
 	// login method
-	public Register login(String Email, String Password) {
-		ElementActions.type(driver, email_login_input, Email);
-		ElementActions.typeSecure(driver, password_input, Password);
+	public Register login(String[] LoginData) {
+		ElementActions.type(driver, email_login_input, LoginData[0]);
+		ElementActions.typeSecure(driver, password_input, LoginData[1]);
 		ElementActions.click(driver, signin_button);
 		return new Register(driver);
 	}

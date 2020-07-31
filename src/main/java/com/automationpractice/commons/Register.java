@@ -3,6 +3,7 @@ package com.automationpractice.commons;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automationpractice.order.OrderHistory;
 import com.shaft.gui.element.ElementActions;
 import com.shaft.tools.io.ReportManager;
 import com.shaft.validation.Verifications;
@@ -13,8 +14,8 @@ import java.util.Date;
 public class Register {
 	private WebDriver driver;
 	// locators
-	private By mr_radioButton = By.xpath("//label[@for='id_gender1']//input");
-	private By mrs_radioButton = By.xpath("//label[@for='id_gender2']//input");
+	private By mr_radioButton = By.xpath("//input[@id='id_gender1']");
+	private By mrs_radioButton = By.xpath("//input[@id='id_gender2']");
 	private By firstName_input = By.id("customer_firstname");
 	private By lastName_input = By.id("customer_lastname");
 	private By email_input = By.id("email");
@@ -22,8 +23,8 @@ public class Register {
 	private By days_select = By.id("days");
 	private By months_select = By.id("months");
 	private By years_select = By.id("years");
-	private By signUpForNewsLetter_checkBox = By.xpath("//label[@for='newsletter']//parent::div[@class='checkbox']");
-	private By receiveSpecialOffers_checkBox = By.xpath("//label[@for='optin']//parent::div[@class='checkbox']");
+	private By signUpForNewsLetter_checkBox = By.xpath("//input[@id='newsletter']");
+	private By receiveSpecialOffers_checkBox = By.xpath("//input[@id='optin']");
 	private By address_firstName_input = By.id("firstname");
 	private By address_lastName_input = By.id("lastname");
 	private By company_input = By.id("company");
@@ -40,6 +41,7 @@ public class Register {
 	private By submit_button = By.id("submitAccount");
 	private By myAccount_text = By.xpath("//h1[text()='My account']");
 	private By personalInfo_button = By.xpath("//span[text()='My personal information']");
+	private By ordersHistory_button = By.xpath("//span[text()='Order history and details']");
 
 	// Actions
 
@@ -58,8 +60,10 @@ public class Register {
 		switch (Register[0].toLowerCase()) {
 		case "mr":
 			ElementActions.click(driver, mr_radioButton);
+			break;
 		case "mrs":
 			ElementActions.click(driver, mrs_radioButton);
+			break;
 		}
 		ElementActions.type(driver, firstName_input, Register[1]);
 		ElementActions.type(driver, lastName_input, Register[2]);
@@ -96,8 +100,10 @@ public class Register {
 		switch (Register[0].toLowerCase()) {
 		case "mr":
 			Verifications.verifyElementAttribute(driver, mr_radioButton, "selected", "true");
+			break;
 		case "mrs":
 			Verifications.verifyElementAttribute(driver, mrs_radioButton, "selected", "true");
+			break;
 		}
 		Verifications.verifyElementAttribute(driver, address_firstName_input, "text", Register[1]);
 		Verifications.verifyElementAttribute(driver, address_lastName_input, "text", Register[2]);
@@ -145,5 +151,11 @@ public class Register {
 		Date date = inputFormat.parse(Month);
 		String YearOutputText = monthOutputFormat.format(date);
 		return YearOutputText;
+	}
+
+	// Navigate to order history method
+	public OrderHistory navigateToOrderHistory() {
+		ElementActions.click(driver, ordersHistory_button);
+		return new OrderHistory(driver);
 	}
 }
