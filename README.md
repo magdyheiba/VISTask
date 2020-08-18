@@ -5,16 +5,16 @@
 
 This a simple assessment for VIS company
 
-•	Implement a test automation framework with an object-oriented design. 
-•	Implement customized reports including screenshots for failures. 
-• Create a new account user
-•	Authenticate as new user
-•	Select “Blouses” Subcategory in “Women” Category
-•	Select resulted product
-•	Follow checkout procedure
-•	Confirm order by selecting bank wire option
-• Validate order was placed from order history page.
-• data driven scenarios
+*	Implement a test automation framework with an object-oriented design. 
+*	Implement customized reports including screenshots for failures. 
+* Create a new account user
+*	Authenticate as new user
+*	Select “Blouses” Subcategory in “Women” Category
+*	Select resulted product
+*	Follow checkout procedure
+*	Confirm order by selecting bank wire option
+* Validate order was placed from order history page.
+* data driven scenarios
 
 ### Tech
 
